@@ -25,14 +25,14 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json())
 
-app.get('/', (reg, res) => {res.send(database.users)})
+app.get('/', (reg, res) => {res.send('it is working')})
 app.post('/register', (req, res) => {register.handleRegister(req, res, dataBase, bcrypt)})
 app.post('/signin', (req, res) => {signin.handleSignin(req, res, dataBase, bcrypt)})
 app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, dataBase)})
 app.put('/image', (req, res) => {image.handleImage(req, res, dataBase)})
 app.post('/imageurl', (req, res) => {image.handleApiCall(req, res)})
 
-app.listen(process.env.PORT || 3001, () => {
+app.listen(process.env.PORT, () => {
     console.log(`app is running on port ${process.env.PORT}`);
 })
 
