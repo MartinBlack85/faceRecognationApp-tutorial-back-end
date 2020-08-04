@@ -12,8 +12,6 @@ const handleApiCall = (req, res) => {
     .catch(err => res.status(400).json('unable to work with API'));
 }
 
-
-
 const handleImage = (req, res, dataBase) => {
     const { id } = req.body;
     dataBase('users').where('id','=', id)
@@ -26,6 +24,6 @@ const handleImage = (req, res, dataBase) => {
 }
 
 module.exports = {
-    handleImage: handleImage,
-    handleApiCall: handleApiCall
+    handleApiCall: handleApiCall,
+    handleImage: handleImage
 };
